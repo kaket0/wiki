@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+{% if eror  %}
+    <h2 class="alert alert-primary" role="alert">{{eror}}</h2>
+{%endif%}
+<form action = "{% url 'article' %}" method="post">
+    {% csrf_token %}  
+   
+    <input class="btn btn-primary" type="submit" value = "Зберегти">
+    {{NewArticle}}
+</form> 
+ {% endblock %}

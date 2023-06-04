@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block body %}
+  <form action = "/wiki/{{title}}/edit" method="GET">
+      <!-- {% csrf_token %}   -->
+        <input type="hidden" name="title" value="{{title}}">
+        <input class="btn btn-primary" type="submit" value = "Редагувати">
+  </form> 
+   
+  {{article |safe}}
+   
+ {% endblock %}

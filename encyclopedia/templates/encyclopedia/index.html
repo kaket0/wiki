@@ -1,0 +1,19 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>Всi сторiнки</h1>
+
+    <ul>
+        {% for entry in entries %}
+            <li><a href=" wiki/{{ entry }}">{{ entry }}</a> </li>
+        
+        {% empty %}
+            <li>Тут пусто...</li>
+        {% endfor %}    
+    </ul>
+
+{% endblock %}
